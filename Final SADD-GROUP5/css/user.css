@@ -1,0 +1,261 @@
+/* --- NAVBAR DESIGN BOOST --- */
+
+/* Soft shadow for entire navbar */
+.custom-navbar {
+  background: #ffffff;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Space between nav links */
+.nav-link-group .nav-link {
+  margin: 0 6px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link-group .nav-link:hover {
+  color: #FF6B00 !important;
+  transform: translateY(-1px);
+  font-weight: 500;
+}
+
+/* Orange button hover */
+.user_btn_orange:hover {
+  color: #fff !important;
+  background-color: #FF6B00;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Search bar animation + UX */
+.search-bar input {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  padding: 10px 18px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #FF6B00;
+  box-shadow: 0 4px 10px rgba(255, 107, 0, 0.15);
+}
+
+/* Adjust logo-text spacing for better visual hierarchy */
+.navbar-brand div h4, 
+.navbar-brand div h5, 
+.navbar-brand div h6 {
+  line-height: 1.2;
+}
+
+/* Responsive fixes for small screens */
+@media (max-width: 768px) {
+  .search-bar-wrapper {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .navbar-brand {
+    justify-content: center;
+  }
+
+  .nav-link-group {
+    justify-content: center;
+  }
+}
+
+/*added*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #e2efff);
+  color: #333;
+}
+
+.h-font {
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.table caption {
+  caption-side: top;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.8em;
+}
+
+.modal-header {
+  background: #0d6efd;
+  color: white;
+  border-bottom: none;
+}
+
+.modal-body {
+  font-size: 1rem;
+  padding: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.modal-content {
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+select.form-select {
+  border-radius: 1rem;
+  padding: 0.4rem 0.75rem;
+}
+
+/* Add these styles to your existing style section */
+.simplified-header {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #6c757d;
+}
+
+/* Enhanced Header Styles */
+.header-container {
+    background: linear-gradient(135deg, #f8faff, #ffffff);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.header-container:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+}
+
+.current-block-badge {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modern Badge Styles */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 0.5em 0.8em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 1.25rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .badge {
+        font-size: 0.8rem;
+    }
+}
+
+.student-item {
+    transition: all 0.2s ease;
+}
+
+.student-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* AI Predictions Custom Styles */
+.prediction-controls {
+    border-left: 4px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.05);
+    transition: all 0.3s ease;
+}
+
+.prediction-info {
+    border-left: 4px solid #17a2b8;
+    background-color: rgba(23, 162, 184, 0.05);
+}
+
+.prediction-card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.prediction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.risk-indicator {
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.high-risk { background-color: #dc3545; }
+.medium-risk { background-color: #ffc107; }
+.low-risk { background-color: #28a745; }
+
+.prediction-progress {
+    height: 24px;
+    border-radius: 12px;
+}
+
+.prediction-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.prediction-suggestion {
+    font-size: 0.85rem;
+    border-left: 3px solid #6c757d;
+    padding-left: 10px;
+}
+

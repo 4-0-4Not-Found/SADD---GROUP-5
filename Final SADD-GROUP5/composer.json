@@ -1,0 +1,17 @@
+{
+    "name": "walto/attendance_system",
+    "autoload": {
+        "psr-4": {
+            "Walto\\AttendanceSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "walts731",
+            "email": "142887725+walts731@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.0"
+    }
+}

@@ -1,0 +1,73 @@
+<div class="row">
+        <div class="col-md-12">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="card-title"><?php echo $row_student_details['name']; ?></h2>
+                    <p class="card-text">BU No: <?php echo $row_student['bu_no']; ?></p>
+                    <p class="card-text badge rounded-pill <?php echo ($row_student_details['status'] == 'active') ? 'bg-success' : 'bg-danger'; ?>">
+                        <?php echo $row_student_details['status']; ?>
+                    </p>
+
+            
+        </div>
+        <div class="col-md-4 justify-content-center">
+                    <!-- Add the following code for the photo -->
+                    <img src="../<?php echo $row_student_details['img']; ?>" alt="Student Photo" class="img-fluid mb-3 rounded-circle" style="width: 100px; height: 100px;">
+            <!-- Add the following code for the "Add Photo" button and form -->
+            <form action="upload_photo.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="bu_no" value="<?php echo $row_student['bu_no']; ?>">
+                <div class="mb-3">
+        <label for="photo" class="form-label"></label>
+        <input class="form-control" id="photo" type="file" name="photo" accept="image/*">
+    </div>
+    
+    <button type="submit" class="btn btn-outline-info rounded-pill">Add Photo</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Smaller Pie Chart -->
+                <canvas id="pieChart" width="100" height="100"></canvas>
+                <script>
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Present', 'Absent', 'Late', 'Excused'],
+            datasets: [{
+                data: [
+                    <?php echo round(($countRow['present_count'] / ($countRow['present_count'] + $countRow['absent_count'] + $countRow['late_count'] + $countRow['excused_count'])) * 100, 2); ?>,
+                    <?php echo round(($countRow['absent_count'] / ($countRow['present_count'] + $countRow['absent_count'] + $countRow['late_count'] + $countRow['excused_count'])) * 100, 2); ?>,
+                    <?php echo round(($countRow['late_count'] / ($countRow['present_count'] + $countRow['absent_count'] + $countRow['late_count'] + $countRow['excused_count'])) * 100, 2); ?>,
+                    <?php echo round(($countRow['excused_count'] / ($countRow['present_count'] + $countRow['absent_count'] + $countRow['late_count'] + $countRow['excused_count'])) * 100, 2); ?>,
+                ],
+                backgroundColor: [
+                    'rgba(144, 238, 144, 0.7)', // Blue-green
+                    'rgba(255, 187, 187, 0.7)', // Lighter red
+                    'rgba(255, 241, 184, 0.7)', // Lighter yellow
+                    'rgba(197, 232, 255, 0.7)', // Lighter cyan
+                ],
+                borderColor: [
+                    'rgba(0, 128, 128, 1)', // Teal border
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+</script>
+
+
+
+            </div>
+        </div>
+    </div>
